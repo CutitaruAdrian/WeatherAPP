@@ -1,10 +1,12 @@
-package com.example.astyletech.weatherapp;
+package com.example.astyletech.weatherapp.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.astyletech.weatherapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         mSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Settings.class);
+                Intent i = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(i);
             }
         });

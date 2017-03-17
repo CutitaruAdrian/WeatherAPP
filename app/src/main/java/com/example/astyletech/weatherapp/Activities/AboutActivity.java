@@ -1,4 +1,4 @@
-package com.example.astyletech.weatherapp;
+package com.example.astyletech.weatherapp.Activities;
 
 
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.astyletech.weatherapp.Models.ToolbarTitle;
+import com.example.astyletech.weatherapp.R;
 
-public class About extends AppCompatActivity {
+
+public class AboutActivity extends AppCompatActivity {
     private Toolbar toolbar;
 
     @Override
@@ -16,9 +19,13 @@ public class About extends AppCompatActivity {
         setContentView(R.layout.activity_about);
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("About");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ToolbarTitle title = new ToolbarTitle();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title.aboutTitle());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
     }
 
     @Override

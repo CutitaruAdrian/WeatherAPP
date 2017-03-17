@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp</string>
+    <string name="location">Location</string>
+    <string name="temperature">temperature</string>
+    <string name="breeze">breeze</string>
+    <string name="wind_direction">direction</string>
 </resources>

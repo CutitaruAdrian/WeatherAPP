@@ -1,4 +1,4 @@
-package com.example.astyletech.weatherapp;
+package com.example.astyletech.weatherapp.Activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class Settings extends AppCompatActivity {
+import com.example.astyletech.weatherapp.Models.ToolbarTitle;
+import com.example.astyletech.weatherapp.R;
+
+public class SettingsActivity extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +20,20 @@ public class Settings extends AppCompatActivity {
 
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Settings");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ToolbarTitle title = new ToolbarTitle();
+
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title.settingsTitle());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
 
         TextView mAboutButton=(TextView) findViewById(R.id.about_button);
         mAboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(Settings.this,About.class);
+                Intent i=new Intent(SettingsActivity.this,AboutActivity.class);
                 startActivity(i);
             }
         });
