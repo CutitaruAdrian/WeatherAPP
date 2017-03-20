@@ -8,23 +8,26 @@ import android.view.MenuItem;
 
 import com.example.astyletech.weatherapp.R;
 
-
 public abstract class BaseActivity extends AppCompatActivity {
     protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(getLayoutId());
         toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(getToolbarTitle());
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
     }
 
     protected abstract String getToolbarTitle();
+
+    protected abstract int getLayoutId();
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
